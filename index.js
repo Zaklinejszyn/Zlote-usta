@@ -4,28 +4,22 @@ const mongoose = require("mongoose");
 const db = require("./models");
 const bodyParser = require("body-parser");
 const socket = require("socket.io");
+const { PORT, JWT_SECRET, MONGO_URI } = require('./config').server;
+
+const topicRoutes = require('./routes/topic');
+
 
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://localhost/konkurs")
-
-
-app.post("/topic",async(req,res)=>{
-    const topic = {
-        title: req.body.title,
-        description: req.body.description,
-        user_id: req.body.author
-    }
-    console.log(topic);
-    await db.Topic.create(topic);
-    res.send("a");
+mongoose.Promise = Promise;
+mongoose.connect(MONGO_URI, {
+    keepAlive: true,
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
 })
 
-app.get("/topic", async (req,res) =>{
-    const topics = await db.Topic.find({isAccepted:true});
-    console.log(topics);
-    res.status(200).json(topics);
-})
+app.use('/api', topicRoutes);
 
 app.post("/register", async (req, res, next)=>{
     try{
@@ -60,8 +54,17 @@ app.post("/speeches/vote", async(req, res)=>{
     
 })
 
+app.use((error, req, res, next) => {
+    return res.status(error.status || 500)
+    .json({
+        error: {
+            message: error.message || 'Server error'
+        }
+    })
+})
 
-const server = app.listen(3000);
+
+const server = app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 const io = socket(server);
 io.on("connection", socket=>{
     console.log("made socket connection");
