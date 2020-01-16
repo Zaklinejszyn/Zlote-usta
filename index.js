@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const db = require("./models");
 const bodyParser = require("body-parser");
 const socket = require("socket.io");
+const jwt = require("jsonwebtoken");
+const {requireLogin, requireAdmin} = require("./middleware/auth.js");
 const { PORT, JWT_SECRET, MONGO_URI } = require('./config').server;
 
 const topicRoutes = require('./routes/topic');
@@ -36,7 +38,8 @@ app.post("/login", async (req, res, next)=>{
     if(!isMatch){
         res.status(401).send("zle haslo lub email");
     }
-    res.json(user);
+    let token = jwt.sign({id: user.id}, JWT_SECRET);
+    res.json(token);
 })
 
 app.get("/speeches", async (req,res) =>{
@@ -50,9 +53,17 @@ app.post("/speeches", async (req, res)=>{
     res.send("gotowe");
 })
 
-app.post("/speeches/vote", async(req, res)=>{
-    
+
+
+app.get("/asd", requireAdmin, async(req, res)=>{
+    res.send("aa");
 })
+
+app.get("/confirmtopics", requireAdmin, async(req, res)=>{
+    const topics = await db.Topic.find({});
+    return res.status(200).json(topics);
+})
+
 
 app.use((error, req, res, next) => {
     return res.status(error.status || 500)
