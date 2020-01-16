@@ -9,7 +9,7 @@ const speechSchema = new mongoose.Schema({
         type:String,
         require:true
     },
-    user_id:{
+    name:{
         type:String,
         require:true
     },

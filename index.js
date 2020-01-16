@@ -10,6 +10,7 @@ const { PORT, JWT_SECRET, MONGO_URI } = require('./config').server;
 
 const topicRoutes = require('./routes/topic');
 const topicAdminRoutes = require("./routes/topicAdmin");
+const speechRoutes = require('./routes/speech');
 
 
 app.use(bodyParser.json());
@@ -22,7 +23,7 @@ mongoose.connect(MONGO_URI, {
     useUnifiedTopology: true
 })
 
-app.use('/api', topicRoutes, topicAdminRoutes);
+app.use('/api', topicRoutes, topicAdminRoutes, speechRoutes);
 
 app.post("/register", async (req, res, next)=>{
     try{
@@ -42,18 +43,6 @@ app.post("/login", async (req, res, next)=>{
     let token = jwt.sign({id: user.id}, JWT_SECRET);
     res.json(token);
 })
-
-app.get("/speeches", async (req,res) =>{
-    const speeches = await db.Speech.find({});
-    console.log(speeches);
-})
-
-app.post("/speeches", async (req, res)=>{
-    const speech = req.body;
-    await db.Speech.create(speech);
-    res.send("gotowe");
-})
-
 
 
 app.get("/asd", requireAdmin, async(req, res)=>{
