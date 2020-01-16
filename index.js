@@ -9,6 +9,7 @@ const {requireLogin, requireAdmin} = require("./middleware/auth.js");
 const { PORT, JWT_SECRET, MONGO_URI } = require('./config').server;
 
 const topicRoutes = require('./routes/topic');
+const topicAdminRoutes = require("./routes/topicAdmin");
 
 
 app.use(bodyParser.json());
@@ -21,7 +22,7 @@ mongoose.connect(MONGO_URI, {
     useUnifiedTopology: true
 })
 
-app.use('/api', topicRoutes);
+app.use('/api', topicRoutes, topicAdminRoutes);
 
 app.post("/register", async (req, res, next)=>{
     try{
@@ -57,11 +58,6 @@ app.post("/speeches", async (req, res)=>{
 
 app.get("/asd", requireAdmin, async(req, res)=>{
     res.send("aa");
-})
-
-app.get("/confirmtopics", requireAdmin, async(req, res)=>{
-    const topics = await db.Topic.find({});
-    return res.status(200).json(topics);
 })
 
 
