@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
+
+:root {
+    --gold: #ffbf00;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+
+}
+body {
+    font-family: 'Fira Code', monospace;
+    background-color: #171717;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    padding: 30px 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    letter-spacing: 4px;
+    color: #ffbf00;
+}
+
+.logo {
+    font-size: 21px;
+    letter-spacing: 7px;
+}
+
+.menu {
+    display: flex;
+    font-size: 16px;
+    list-style: none;
+}
+
+.menuItem {
+    margin-left: 40px;
+}
+
+.formBox {
+    margin-top: 45px;
+    width: 500px;
+    height: 650px;
+    padding: 20px 55px;
+    border: 2px solid #ffbf00;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+
+}
+
+.formBoxTitle {
+    font-size: 21px;
+    margin: 0;
+}
+
+.formBoxDescription {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.firstName, .secName, .grade, .e-mail, .password, .checkbox {
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid #ffbf00;
+    margin: 10px 0;
+    width: 80%;
+    outline: none;
+}
+
+.goRegister a{
+    text-decoration: none;
+    color: white;
+}
+
+.formButton {
+    background-color: #ffbf00;
+    margin-top: 30px;
+    display: block;
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.createAccountForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 45px;
+}
+
+/* media queries */
+
+@media (max-width: 600px) {
+    .formBox {
+        width: 50%;
+        height: 50%;
+    }
+    .formBoxTitle {
+        font-size: 14px;
+    }
+
+    .formBoxDescription {
+        font-size: 10px;
+    }
+
+    .firstName, .secName, .grade, .e-mail, .password{
+        font-size: 11px;
+        margin: 7px 0;
+    }
+
+    .formButton {
+        margin-top: 20px;
+        font-size: 11px;
+        padding: 6px 12px;
+        margin-bottom: 6px;
+    }
+
+    .createAccountForm {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .formBox {
+        width: 100vw;
+        height: 50%;
+    }
+    .formBoxTitle {
+        font-size: 14px;
+    }
+
+    .formBoxDescription {
+        font-size: 10px;
+    }
+
+    .firstName, .secName, .grade, .e-mail, .password{
+        font-size: 11px;
+        margin: 7px 0;
+    }
+
+    .formButton {
+        margin-top: 20px;
+        font-size: 11px;
+        padding: 6px 12px;
+        margin-bottom: 6px;
+    }
+
+    .createAccountForm {
+        margin-top: 30px;
+    }
+}
+

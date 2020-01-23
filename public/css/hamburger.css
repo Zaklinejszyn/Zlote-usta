@@ -1,0 +1,110 @@
+*, *::after, *::before {
+  outline: none;
+  box-sizing: border-box;
+}
+.hamburger {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    display: none;
+}
+  
+  .hamburger, .hamburgerNavigation {
+      transition: transform .3s .1s ease-in-out;
+}
+  
+  .hamburgerBox {
+    height: 16px;
+    width: 38px;
+    display: none;
+    position: relative;
+    background: none;
+}
+  
+  .hamburgerInner {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: #dcb42c;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color .3s .1s ease-in-out;
+}
+  
+  .hamburgerInner::before, .hamburgerInner::after {
+    width: 100%;
+    height: 2px;
+    background-color: #dcb42c;
+    position: absolute;
+    content: '';
+    left: 0;
+    transition: transform .2s .2s ease-in-out;
+}
+  
+  .hamburgerInner::before {
+    top: -10px;
+}
+  
+  .hamburgerInner::after {
+    top: 10px;
+}
+  
+  .hamburgerActive {
+    transform: translateX(-300px);
+}
+  
+  .hamburgerActive .hamburgerInner {
+    background-color: transparent;
+}
+  
+  .hamburgerActive .hamburgerInner:before {
+    transform: translateY(10px) rotate(45deg);
+}
+  
+  .hamburgerActive .hamburgerInner:after {
+    transform: translateY(-10px) rotate(-45deg);
+}
+  
+  .hamburgerNavigation {
+    background-color: white;
+    display: none;
+    padding: 0px;
+    height: auto;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* transform: translateX(300px); */
+    font-size: 12px;
+}
+  
+  .hamburgerNavigationList {
+    list-style: none;
+}
+  
+  .hamburgerNavigationActive {
+    transform: translateX(0px);
+    display: none;
+}
+  
+  .hamburgerNavigationItem {
+    margin-bottom: 40px;
+}
+  
+  .hamburgerLink:link, .hamburgerLink:visited {
+    font-size: 14px;
+    border: none;
+    color: #171717;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hamburgerLink:hover, .hamburgerLink:active {
+   color: #dcb42c;
+}

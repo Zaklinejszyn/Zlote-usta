@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='loginForm.css'>
+    <link rel='stylesheet' href='../css/hamburger.css'>
+    <link rel='stylesheet' href='../css/layout.css'>
+    <title>Log-in form</title>
+</head>
+<body>
+    <nav class='navigation'>
+        <button class='hamburger'>
+            <span class='hamburgerBox'>
+                <span class='hamburgerInner'></span>
+            </span>
+        </button>
+        <div class='hamburgerNavigation'>
+            <ul class='hamburgerNavigationList'>
+                <li class='hamburgerNavigationItem' style='margin-top: 40px;'><a href='#' class='hamburgerLink'>O konkursie</a></li>
+                <li class='hamburgerNavigationItem'><a href='competitionRules.html' class='hamburgerLink'>regulamin konkursu</a></li>
+                <li class='hamburgerNavigationItem'><a href='rewards.html' class='hamburgerLink'>nagrody</a></li>
+                <li class='hamburgerNavigationItem'><a href='addTopic.html' class='hamburgerLink'>zaproponuj temat</a></li>
+                <li class='hamburgerNavigationItem'><a href='gallery.html' class='hamburgerLink'>galeria zdjęć</a></li>
+                <li class='hamburgerNavigationItem'><a href='contact.html' class='hamburgerLink'>kontakt</a></li>
+                <li class='hamburgerNavigationItem'><a href='form/loginForm.html' class='hamburgerLink'>logowanie</a></li>
+                <li class='hamburgerNavigationItem'><a href='form/registerForm.html' class='hamburgerLink'>rejestracja</a></li>
+            </ul>
+        </div>
+        <span class='logo'><a href='../'>golden lips</a></span>
+        <ul class='navigationMenu'>
+            <li class='navigationMenuItem'><a href='loginForm.html'>logowanie</a></li>
+            <li class='navigationMenuItem'><a href='registerForm.html'>rejestracja</a></li>
+        </ul>
+    </nav>
+    <div class='formBox'>
+        <h1 class='formBoxTitle'>Logowanie</h1>
+        <p class='formBoxDescription'>Zaloguj się jeżeli chcesz skorzystać z możliwości jakie oferuje ci nasza strona</p>
+        <form class='createAccountForm'>
+            <input type='e-mail' name='e-mail' class='e-mail' id='e-mail' placeholder='e-mail'> 
+            <input type='password' name='password' class='password' id='password' placeholder='hasło'> 
+            <button class='formButton'>zaloguj się</button>
+            <p class='goRegister'><a href='registerForm.html'>Nie masz konta? Zarejestruj się</a></p>
+        </form>
+    </div>   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+    <script>
+        let form = document.querySelector('form');
+        let email = document.querySelector('#e-mail');
+        let password = document.querySelector('#password');
+
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if(!email.value || !password.value)
+                return;
+            
+            axios.post('http://localhost:3000/login', {
+                email: email.value,
+                password: password.value,
+            }).then(() => { resetInputs() })
+        })
+
+        function resetInputs() {
+            title.value = '';
+            description.value = '';
+            author.value = '';
+        }
+    </script>
+</body>
+</html>
