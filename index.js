@@ -11,6 +11,7 @@ const { PORT, JWT_SECRET, MONGO_URI } = require('./config').server;
 const topicRoutes = require('./routes/topic');
 const topicAdminRoutes = require("./routes/topicAdmin");
 const speechRoutes = require('./routes/speech');
+const authRoutes = require('./routes/auth');
 
 
 app.use(bodyParser.json());
@@ -23,32 +24,10 @@ mongoose.connect(MONGO_URI, {
     useUnifiedTopology: true
 })
 
-app.use('/api', topicRoutes, topicAdminRoutes, speechRoutes);
-
-app.post("/register", async (req, res, next)=>{
-    try{
-        await db.User.create(req.body);
-    }catch(err){
-        console.log(err);
-    }
-})
-
-app.post("/login", async (req, res, next)=>{
-    let {email, password} = req.body;
-    let user = await db.User.findOne({email});
-    let isMatch = await user.comparePassword(password, next);
-    if(!isMatch){
-        res.status(401).send("zle haslo lub email");
-    }
-    let token = jwt.sign({id: user.id}, JWT_SECRET);
-    res.json(token);
-})
-
-
-app.get("/asd", requireAdmin, async(req, res)=>{
-    res.send("aa");
-})
-
+app.use('/api', topicRoutes);
+app.use('/api', topicAdminRoutes);
+app.use('/api', speechRoutes);
+app.use('/api', authRoutes);
 
 app.use((error, req, res, next) => {
     return res.status(error.status || 500)
