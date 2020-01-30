@@ -1,110 +1,134 @@
+:root {
+    --gold: #ffbf00;
+    --black: #171717;
+}
+
 *, *::after, *::before {
   outline: none;
   box-sizing: border-box;
 }
+
 .hamburger {
     position: absolute;
-    top: 30px;
-    right: 60px;
+    right: 0px !important;
     cursor: pointer;
     background-color: transparent;
     border: 0;
     display: none;
+    z-index: 1;
 }
   
-  .hamburger, .hamburgerNavigation {
+.hamburger, .hamburgerNavigation {
       transition: transform .3s .1s ease-in-out;
 }
   
-  .hamburgerBox {
+.hamburgerBox {
     height: 16px;
     width: 38px;
     display: none;
     position: relative;
     background: none;
+    z-index: 1;
 }
   
-  .hamburgerInner {
+.hamburgerInner {
     width: 100%;
     height: 2px;
     position: absolute;
     background-color: #dcb42c;
-    left: 0;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     transition: background-color .3s .1s ease-in-out;
 }
   
-  .hamburgerInner::before, .hamburgerInner::after {
+.hamburgerInner::before, .hamburgerInner::after {
     width: 100%;
     height: 2px;
     background-color: #dcb42c;
     position: absolute;
     content: '';
-    left: 0;
+    right: 0;
     transition: transform .2s .2s ease-in-out;
 }
   
-  .hamburgerInner::before {
+.hamburgerInner::before {
     top: -10px;
 }
   
-  .hamburgerInner::after {
+.hamburgerInner::after {
     top: 10px;
 }
   
-  .hamburgerActive {
-    transform: translateX(-300px);
+.hamburgerActive {
+    transform: translateX(-150px);
+    z-index: 1;
 }
   
-  .hamburgerActive .hamburgerInner {
+.hamburgerActive .hamburgerInner {
     background-color: transparent;
 }
   
-  .hamburgerActive .hamburgerInner:before {
-    transform: translateY(10px) rotate(45deg);
+.hamburgerActive .hamburgerInner:before {
+    transform: translateY(10px) rotate(225deg);
 }
   
-  .hamburgerActive .hamburgerInner:after {
-    transform: translateY(-10px) rotate(-45deg);
+.hamburgerActive .hamburgerInner:after {
+    transform: translateY(-10px) rotate(-225deg);
 }
   
-  .hamburgerNavigation {
+.hamburgerNavigation {
     background-color: white;
-    display: none;
-    padding: 0px;
     height: auto;
-    width: 300px;
+    width: auto;
     position: absolute;
-    top: 0;
-    right: 0;
-    /* transform: translateX(300px); */
-    font-size: 12px;
+    top: 0px;
+    right: 0px;
+    transform: translateX(200px);
+    color: black;
 }
   
-  .hamburgerNavigationList {
+.hamburgerNavigationList {
     list-style: none;
-}
-  
-  .hamburgerNavigationActive {
-    transform: translateX(0px);
     display: none;
 }
   
-  .hamburgerNavigationItem {
-    margin-bottom: 40px;
+.hamburgerNavigationActive {
+    transform: translateX(0);
+    height: 100%;
+    width: 200px;
 }
   
-  .hamburgerLink:link, .hamburgerLink:visited {
+.hamburgerNavigationItem {
+    margin: 0px 0px 20px 0px;
+}
+  
+.hamburgerLink:link, .hamburgerLink:visited {
     font-size: 14px;
     border: none;
     color: #171717;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+    -webkit-transition-duration: 2.4s;
+    transition-duration: 2.4s;
     text-decoration: none;
     cursor: pointer;
 }
 
 .hamburgerLink:hover, .hamburgerLink:active {
    color: #dcb42c;
+}
+
+@media (max-width: 800px) {
+  .hamburger {
+    display: inline-block;
+  }
+
+  .hamburgerBox {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 800px) { 
+    .hamburgerNavigation {
+        display: none;
+    }
 }

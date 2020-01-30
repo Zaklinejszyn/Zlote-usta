@@ -1,44 +1,21 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='css/layout.css'>
-    <link rel='stylesheet' href='css/hamburger.css'>
-    <link rel='stylesheet' href='css/footer.css'>
     <link rel='stylesheet' href='css/bot.css'>
     <link rel='stylesheet' href='css/chat.css'>
     <link rel='stylesheet' href='css/contact.css'>
     <link rel='stylesheet' href='css/navbar.css'>
     <link rel='stylesheet' href='css/mainInfo.css'>
-	<link rel="shortcut icon" href="./img/favicon.png" />
+	    <link rel='stylesheet' href='css/layout.css'>
+    <link rel='stylesheet' href='css/hamburger.css'>
+    <link rel='stylesheet' href='css/footer.css'>
 	<link rel="shortcut icon" href="./img/favicon.png" />
     <title>Layout</title>
-	
-	<style>
-		.botItem
-		{
-			display: none;
-		}
-	</style>
 </head>
 <body>
-	<!--
-
-
-        Bot
-
-
-    -->
-	<script>var BotStar={appId:"s659893b4-bec1-4738-8db8-139768a5244f",mode:"livechat"};!function(t,a){var e=function(){(e.q=e.q||[]).push(arguments)};e.q=e.q||[],t.BotStarApi=e;!function(){var t=a.createElement("script");t.type="text/javascript",t.async=1,t.src="https://widget.botstar.com/static/js/widget.js";var e=a.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();}(window,document)</script>
-    <!--
-
-
-        Tutaj mamy nagłówek
-
-
-    -->
     <nav class='navigation'>
         <button class='hamburger'>
             <span class='hamburgerBox'>
@@ -47,7 +24,7 @@
         </button>
         <div class='hamburgerNavigation'>
             <ul class='hamburgerNavigationList'>
-                <li class='hamburgerNavigationItem'><a href='#' class='hamburgerLink'>O konkursie</a></li>
+                <li class='hamburgerNavigationItem' style='margin-top: 40px;'><a href='#' class='hamburgerLink'>O konkursie</a></li>
                 <li class='hamburgerNavigationItem'><a href='competitionRules.html' class='hamburgerLink'>regulamin konkursu</a></li>
                 <li class='hamburgerNavigationItem'><a href='rewards.html' class='hamburgerLink'>nagrody</a></li>
                 <li class='hamburgerNavigationItem'><a href='addTopic.html' class='hamburgerLink'>zaproponuj temat</a></li>
@@ -64,18 +41,11 @@
         </ul>
     </nav>
     <main>
-        <!--
-
-
-            Tutaj mamy menu i tytuł
-
-
-        -->
         <div class="info">
-            <h1 class="infoTitle">złote usta</h1>
+            <h1 class="infoTitle">o konkursie</h1>
             <hr>
             <p class="infoDescription">
-                jeżeli masz ochotę wziąć udział w konkursie lingwistycznym to nie mogłeś lepiej trafić
+                poznaj
             </p>
             <ul class="infoMenu">
                 <li class="menuItem">
@@ -87,20 +57,10 @@
                 <li class="menuItem">
                     <button class="menuButton chat">chat</button> 
                 </li>
-                <li class="menuItem">
-                    <button class="menuButton contact">kontakt</button> 
-                </li>
             </ul>
         </div>
-        <!--
-
-
-            Tutaj jest strona główna
-
-
-        -->
-        <div class="containerMainInfo">
-            <div class="mainInfoItem">
+        <div class="container mainInfo">
+            <div class="item">
                 <div class="itemHeader">
                     <h2 class="itemTitle">regulamin konkursu</h2>
                 </div>
@@ -114,7 +74,7 @@
                     <a href='competetionRules.html'><button class="itemButton">zobacz regulamin</button></a>
                 </div>
             </div>
-            <div class="mainInfoItem">
+            <div class="item">
                 <div class="itemHeader">
                     <h2 class="itemTitle">informacje o konkursie</h2>
                 </div>
@@ -128,7 +88,7 @@
                     <a href='info.html'><button class="itemButton">czytaj</button></a>
                 </div>
             </div>
-            <div class="mainInfoItem">
+            <div class="item">
                 <div class="itemHeader">
                     <h2 class="itemTitle">galeria zdjęć</h2>
                 </div>
@@ -142,7 +102,7 @@
                     <a href='gallery.html'><button class="itemButton">zobacz zdjęcia</button></a>
                 </div>
             </div>
-            <div class="mainInfoItem">
+            <div class="item">
                 <div class="itemHeader">
                     <h2 class="itemTitle">dodaj konkurs</h2>
                 </div>
@@ -153,24 +113,14 @@
                     <p class="itemDescription">
                         zaproponuj go!
                     </p>
-                    <a href='topicList.html'><button class="itemButton">dodaj</button></a>
+                    <a href='addTopic.html'><button class="itemButton">dodaj</button></a>
                 </div>
             </div>
         </div>
-        <!--
-
-
-            Tutaj jest bot
-
-
-        -->
-        <div class='containerBot'>
-            <div class='showBotImage'>
-                <img src="img/wisnia.png" alt="wisnia" class='botImage'>
-            </div>
-            <div class="botItem">
+        <div class='container Bot'>
+            <img src="img/wisnia.png" alt="wisnia">
+            <!-- <div class="item">
                 <div class="itemHeader">
-                    <img src="img/wisnia.png" alt="wisnia" class='smallBotImage'>
                     <h2 class="itemTitle">bot</h2>
                 </div>
                 <div class="itemContent">
@@ -182,17 +132,10 @@
                     </p>
                     <a href='addTopic.html'><button class="itemButton">bot</button></a>
                 </div>
-            </div>
+            </div> -->
         </div>
-        <!--
-
-
-            Tutaj jest chat 
-
-
-        -->
-        <div class='containerChat'>
-            <div class="chatItem">
+        <div class='container Chat'>
+            <div class="item">
                 <div class="itemHeader">
                     <h2 class="itemTitle">tu będzie czat</h2>
                 </div>
@@ -207,61 +150,14 @@
                 </div>
             </div>
         </div>
-        <!--
-
-
-            Tutaj jest kontakt 
-
-
-        -->
-        <div class='containerContact'>
-            <div class='phoneImage'>
-                <img src="img/phone.png" alt="phone">
-                <img src="img/arroba.png" alt="arroba">
-            </div>
-            <div class="contactItem">
-                <div class="itemHeader">
-                    <h2 class="itemTitle">dane kontaktowe</h2>
-                </div>
-                <div class="itemContent">
-                    <div class="itemDescription">
-                        <p>mail: supermail@mail.pl</p>
-                        <p>telefon: 231923923</p>
-                        <p>adres: 2 piętro skrzydło chyba południowe</p>
-                    </div>
-                </div>
-            </div>
-            <div class="contactItem">
-                <div class="itemHeader">
-                    <h2 class="itemTitle">napisz nam wiadomość</h2>
-                </div>
-                <div class="itemContent">
-                    <form class='createAccountForm'>
-                        <input type='text' name='topic' class='topic' id='topic' placeholder='temat'> 
-                        <textarea type='text' name='messageContent' class='messageContent' id='messageContent' placeholder='treść' rows="10"></textarea>
-                        <a href='addTopic.html'><button class="itemButton">wyślij</button></a>
-                    </form>
-                </div>
-            </div>
-            <div class='phoneImage'>
-                <img src="img/pin.png" alt="pin">
-                <img src="img/message.png" alt="message">
-            </div>
-        </div>
     </main>
-    <!--
-
-
-            Tutaj jest stopka
-
-
-     -->
+    <!--FOOTER-->
     <footer class="footer">
         <div class="footerCard">
             <span class='footerLogo'><a href='./'>golden lips</a></span>        
             <div class='footerContact'>
                 <div style="margin-bottom: 10px;">Masz do nas wiadomość?</div>
-                <a class="footerButton" href="./contact.html">Kontakt</a>
+                <a class="footerButton" href="#">Kontakt</a>
             </div>
         </div>
         <ul class="footerNav">

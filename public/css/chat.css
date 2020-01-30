@@ -1,0 +1,15 @@
+
+.containerChat{
+    display: none;
+    padding: 100px 50px;
+    margin-top: 0px;
+}
+
+
+.chatItem {
+    border: 2px solid white;
+    display: grid;
+    grid-template-rows: 200px 1fr;
+    min-height: 500px;
+    width: 100%;
+}

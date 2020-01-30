@@ -7,59 +7,22 @@
 
 *, *::before, *::after {
     box-sizing: border-box;
-
 }
+
+textarea {
+    resize: none;
+}
+
 body {
+    overflow-x: hidden;
     font-family: 'Fira Code', monospace;
     background-color: var(--black);
     color: white;
     margin: 0;
 }
-
 hr {
     border: 1px solid var(--gold);
 }
-
-.navigation {
-    /* background-color: white; */
-    /* position: fixed;
-    top: 0; */
-    padding: 30px 50px;
-    display: flex;
-    align-items: center;
-    /* width: 100vw; */
-    justify-content: space-between;
-    letter-spacing: 4px;
-    color: var(--gold);
-    border-bottom: 5px solid var(--gold);
-}
-
-.logo a {
-    font-size: 21px;
-    letter-spacing: 7px;
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--gold);
-}
-
-.navigationMenu {
-    display: flex;
-    font-size: 16px;
-    list-style: none;
-}
-
-.navigationMenuItem {
-    margin-left: 5  0px;
-    cursor: pointer;
-}
-
-.navigationMenuItem a{
-    margin-left: 50px;
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--gold);
-}
-
 
 .infoMenu {
     display: flex;
@@ -109,28 +72,13 @@ hr {
     font-size: 21px;
 }
 
-.container {
-    padding: 100px 50px;
-    margin-top: 0px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    grid-gap: 100px 50px;
-}
-
-.item {
-    border: 2px solid white;
-    display: grid;
-    grid-template-rows: 200px 1fr;
-    min-height: 500px;
-    width: 400px;
-}
-
 .itemHeader {
     background-color: white;
     padding: 20px 30px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .itemTitle {
@@ -147,6 +95,9 @@ hr {
     padding: 20px 30px;
 }
 
+.itemDescription p{
+    padding: 10px;
+}
 
 .itemButton {
     font-size: 12px;
@@ -162,6 +113,12 @@ hr {
 .itemButton a{
     text-decoration: none;
     color: var(--gold);
+}
+
+@media (max-width: 450px) {
+    .infoMenu {
+        width: 50px !important;
+    }
 }
 
 .topic{
@@ -219,43 +176,3 @@ button.manageButton {
     color: var(--gold);
     width:150px;
 }
-
-@media (max-width: 800px) { 
-    .navigationMenu {
-        display: none;
-    }
-}
-@media (max-width: 600px) {
-    .navigationMenu {
-        display: none;
-    }
-
-    .logo a{
-        font-size: 12px;
-        letter-spacing: 3px;
-        margin-left: 0px;
-    }
-
-    .hamburgerNavigation {
-        display: block !important;
-    }
-    
-    .hamburger {
-        display: inline-block !important;
-    }
-
-    .hamburgerBox {
-        display: inline-block !important;
-    }
-
-    .item {
-        width: 75%;
-    }
-}
-@media (max-width: 400px) {
-    .item {
-        width: 60%;
-        justify-self: flex-start;
-    }
-}
-

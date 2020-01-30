@@ -1,51 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
 
+:root {
+    --gold: #ffbf00;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 
 }
-body {
-    font-family: 'Fira Code', monospace;
-    background-color: #171717;
-    min-height: 100vh;
+
+main {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.navigation {
-    position: fixed;
-    top: 0;
-    padding: 30px 50px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-    letter-spacing: 4px;
-    color: var(--gold);
-}
-
-.logo {
-    font-size: 21px;
-    letter-spacing: 7px;
-}
-
-.menu {
-    display: flex;
-    font-size: 16px;
-    list-style: none;
-}
-
-.menuItem {
-    margin-left: 40px;
+    margin: 100px 0 100px 0;
 }
 
 .formBox {
-    margin-top: 45px;
-    width: 460px;
-    height: 490px;
+    width: 500px;
+    height: 650px;
     padding: 20px 55px;
-    border: 2px solid var(--gold);
+    border: 2px solid #ffbf00;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -64,28 +39,29 @@ body {
     font-weight: 300;
 }
 
-.title, .description, .e-mail, .password {
+.firstName, .secName, .grade, .e-mail, .password, .checkbox {
     font-family: 'Fira Code', monospace;
     font-size: 16px;
     background-color: transparent;
     color: white;
     border: none;
-    border-bottom: 1px solid var(--gold);
+    border-bottom: 1px solid #ffbf00;
     margin: 10px 0;
     width: 80%;
     outline: none;
 }
 
-.goRegister a{
+.goLogin a{
     text-decoration: none;
     color: white;
 }
-.goRegister a:hover{
+
+.goLogin a:hover{
     color: var(--gold);
 }
 
 .formButton {
-    background-color: var(--gold);
+    background-color: #ffbf00;
     margin-top: 30px;
     display: block;
     border: none;
@@ -119,7 +95,7 @@ body {
         font-size: 10px;
     }
 
-    .e-mail, .password {
+    .firstName, .secName, .grade, .e-mail, .password{
         font-size: 11px;
         margin: 7px 0;
     }
@@ -138,7 +114,7 @@ body {
 
 @media (max-width: 500px) {
     .formBox {
-        width: 100vw;
+        width: 98vw;
         height: 50%;
     }
     .formBoxTitle {
@@ -149,7 +125,7 @@ body {
         font-size: 10px;
     }
 
-    .e-mail, .password {
+    .firstName, .secName, .grade, .e-mail, .password{
         font-size: 11px;
         margin: 7px 0;
     }

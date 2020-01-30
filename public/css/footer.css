@@ -48,23 +48,27 @@
     font-size: 12px;
     background-color: transparent;
     padding: 10px 20px;
-    color: var(--gold);
+    color: var(--gold) !important;
     cursor: pointer;
     border: 1px solid white;
 }
-  
+
 .footer ul {
     list-style: none;
     padding-left: 0;
 }
   
 .footer li {
+    color: white;
     line-height: 2em;
 }
   
 .footer a {
     text-decoration: none;
     color: white;
+}
+.footer a:hover {
+    color: var(--gold);
 }
   
 .footerNav {
@@ -81,6 +85,10 @@
     .footerButton {
         position: absolute;
         bottom: 5px;
+        left: 5px;
+    }
+    .footerLogo {
+        top: 5px;
         left: 5px;
     }
 }

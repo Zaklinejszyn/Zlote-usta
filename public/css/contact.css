@@ -1,0 +1,50 @@
+
+.containerContact{
+    display: none;
+    padding: 100px 50px;
+    margin-top: 0px;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 50px 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerContact .phoneImage img {
+    margin-bottom: 50px;
+    margin-left: 0;
+    max-width: 200px;
+}
+
+.containerContact .phoneImage{
+    margin-left: 0;
+    max-width: 200px;
+    display: grid;
+    align-self: end;
+    justify-self: center;
+}
+
+.topic, .messageContent {
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid var(--gold);
+    margin: 10px 0;
+    width: 80%;
+    outline: none;
+}
+
+.containerContact .contactItem {
+    border: 2px solid white;
+    display: grid;
+    min-height: 500px;
+    /* width: 400px; */
+    margin: 0;
+}
+
+.containerContact .contactItem:nth-child(1) {
+    width: 60%;
+    justify-self: start;
+}

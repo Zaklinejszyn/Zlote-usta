@@ -1,0 +1,44 @@
+
+.containerBot {
+    padding: 100px 50px;
+    margin-top: 0px;
+    display: none;
+    position: relative;
+    width: 100%;
+    grid-template-columns: 30% 65%;
+    grid-gap: 50px;
+}
+
+.botItem {
+    border: 2px solid white;
+    display: grid;
+    min-height: 500px;
+    width: 100%;
+}
+
+.smallBotImage {
+    height: 100px;
+    position: absolute;
+    left: 10px;
+    display: none;
+}
+
+.botImage {
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    .showBotImage {
+        display: none;
+    }
+    .containerBot {
+        grid-template-columns: 100%;
+        grid-gap: 0;
+    }
+    .botImage {
+        width: 100%;
+    }
+    .smallBotImage {
+        display: block;
+    }
+}
