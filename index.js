@@ -14,7 +14,7 @@ const cors = require('cors');
 const topicRoutes = require('./routes/topic');
 const topicAdminRoutes = require("./routes/topicAdmin");
 const speechRoutes = require('./routes/speech');
-//const authRoutes = require('./routes/auth');
+const authRoutes = require('./routes/auth');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -52,11 +52,6 @@ app.post("/login", async (req, res, next)=>{
     }
     let token = jwt.sign({id: user.id}, JWT_SECRET);
     res.json(token);
-})
-
-
-app.get("/asd", requireAdmin, async(req, res)=>{
-    res.send("aa");
 })
 
 
