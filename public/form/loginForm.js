@@ -10,7 +10,8 @@ form.addEventListener('submit', async function(e) {
         password: password.value
     })
     
-    localStorage.setItem('user', JSON.stringify(res.data))
+    localStorage.setItem('user', JSON.stringify(res.data));
+    axios.defaults.headers.common["Authentication"] = `Bearer ${res.data.token}`;
     } catch(err) {
         console.log(err)
     }
