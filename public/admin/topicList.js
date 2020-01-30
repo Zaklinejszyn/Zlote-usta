@@ -21,8 +21,7 @@ axios.get('http://lvh.me:3000/api/topicAdmin').then((res) => {
                 </p>
             </div>
             <div class="topicManage">
-                <button class="manageButton" id="accept" name="${topics[i]._id}">Wyświetl</button>
-                <button class="manageButton">Ukryj</button>
+                <button class="manageButton" id="accept" name="${topics[i]._id}">Zaakceptuj</button>
                 <button class="manageButton">Usuń</button>
             </div>
         </div>`

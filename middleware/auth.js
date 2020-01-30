@@ -19,6 +19,7 @@ const requireLogin = (req, res, next) => {
 
 const requireAdmin = async (req, res, next) => {
     try{
+        console.log(req.headers.authentication);
         let token = req.headers.authentication.split(" ")[1];
         let isVerified = jwt.verify(token, JWT_SECRET);
         console.log(isVerified);
@@ -29,6 +30,7 @@ const requireAdmin = async (req, res, next) => {
         }else{
             return next();
         }
+        
     }catch(err){
         return next(err);
     }
