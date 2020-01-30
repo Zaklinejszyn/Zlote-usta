@@ -2,7 +2,7 @@ const db = require('../models');
 
 const getTopicAdmin = async (req, res, next) => {
     try {
-        const topics = await db.Topic.find({});
+        const topics = await db.Topic.find({}).sort({"isAccepted": 1});
         return res.status(200).json(topics);
 
     } catch (error) {

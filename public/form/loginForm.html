@@ -37,7 +37,7 @@
         <h1 class='formBoxTitle'>Logowanie</h1>
         <p class='formBoxDescription'>Zaloguj się jeżeli chcesz skorzystać z możliwości jakie oferuje ci nasza strona</p>
         <form class='createAccountForm'>
-            <input type='e-mail' name='e-mail' class='e-mail' id='e-mail' placeholder='e-mail'> 
+            <input type='e-mail' name='e-mail' class='e-mail' id='email' placeholder='e-mail'> 
             <input type='password' name='password' class='password' id='password' placeholder='hasło'> 
             <button class='formButton'>zaloguj się</button>
             <p class='goRegister'><a href='registerForm.html'>Nie masz konta? Zarejestruj się</a></p>
@@ -45,7 +45,8 @@
     </div>   
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
-    <script>
+    <script src="loginForm.js"></script>
+    <!-- <script>
         let form = document.querySelector('form');
         let email = document.querySelector('#e-mail');
         let password = document.querySelector('#password');
@@ -67,6 +68,6 @@
             description.value = '';
             author.value = '';
         }
-    </script>
+    </script> -->
 </body>
 </html>

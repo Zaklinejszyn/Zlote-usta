@@ -7,17 +7,16 @@ const socket = require("socket.io");
 const jwt = require("jsonwebtoken");
 const {requireLogin, requireAdmin} = require("./middleware/auth.js");
 const { PORT, JWT_SECRET, MONGO_URI } = require('./config').server;
-const axios = require('axios');
 const cors = require('cors');
-
 
 const topicRoutes = require('./routes/topic');
 const topicAdminRoutes = require("./routes/topicAdmin");
 const speechRoutes = require('./routes/speech');
 const authRoutes = require('./routes/auth');
 
-app.use(cors());
+app.use(cors())
 app.use(bodyParser.json());
+app.use(express.static('public'))
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URI, {

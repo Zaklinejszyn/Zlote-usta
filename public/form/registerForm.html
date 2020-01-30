@@ -63,7 +63,7 @@
             if(!password.value || !firstName.value || !secName.value || !grade.value || !email.value)
                 return;
             
-            axios.post('http://localhost:3000/register', {
+            axios.post('http://localhost:3000/api/register', {
                 email: email.value,
                 name: firstName.value,
                 surname: secName.value,

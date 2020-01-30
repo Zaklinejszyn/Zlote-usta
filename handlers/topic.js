@@ -3,6 +3,7 @@ const db = require('../models');
 const getTopic = async (req, res, next) => {
     try {
         const topics = await db.Topic.find({ isAccepted: true });
+        
         return res.status(200).json(topics);
 
     } catch (error) {
