@@ -1,4 +1,3 @@
-//const db = require("../../models");
 let topiclist = document.querySelector('#topiclist');
 
 axios.get('http://lvh.me:3000/api/topicAdmin').then((res) => {
@@ -7,7 +6,7 @@ axios.get('http://lvh.me:3000/api/topicAdmin').then((res) => {
 
     for(let i = 0; i < topics.length; i++) {
         if(topics[i].isAccepted){
-            
+
         }
         topiclist.innerHTML += `
         <div class="topic">
@@ -22,25 +21,24 @@ axios.get('http://lvh.me:3000/api/topicAdmin').then((res) => {
                 </p>
             </div>
             <div class="topicManage">
-                <button class="manageButton">Wyświetl</button>
+                <button class="manageButton" id="accept" name="${topics[i]._id}">Wyświetl</button>
                 <button class="manageButton">Ukryj</button>
                 <button class="manageButton">Usuń</button>
             </div>
         </div>`
     }
-
+    Abc();
 })
-
-// const Accept = async(req, res) =>{
-//     const query = { "_id": topics[i]._id};
-//     const update = {
-//         "$set": {
-//           "isAccepted": "true"
-//         }
-//       };
-//     try{
-//         db.Topic.updateOne(query, update);
-//     }catch(err){
-//         console.log(err);
-//     }
-// }
+function Abc(){
+    aa = document.querySelectorAll(".topicManage");
+    
+    for(let i = 0; i<aa.length; i++){
+        aa[i].addEventListener("click", e=>{
+            acceptTopic(e.target.name);
+        })
+    }
+}
+function acceptTopic(id){
+    console.log(id);
+    axios.post('http://lvh.me:3000/api/topicAdmin', {_id: id}).then();
+}

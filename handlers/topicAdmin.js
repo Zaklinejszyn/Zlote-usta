@@ -12,14 +12,7 @@ const getTopicAdmin = async (req, res, next) => {
 
 const postTopicAdmin = async (req, res, next) => {
     try {
-        const topic = {
-            isAccepted: true,
-            title: req.body.title,
-            description: req.body.description,
-            user_id: req.body.author
-        }
-        console.log(topic)
-        await db.Topic.create(topic);
+        await db.Topic.updateOne( {_id:req.body._id} , {isAccepted: true});
         return res.status(200);
     } catch (error) {
         return next(error);
