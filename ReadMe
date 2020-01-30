@@ -1,0 +1,20 @@
+Strona stworzona na potrzeby szkolnego konkursu bibliotecznego ,,Złote Usta" - konkurs na najlepsze przemówienia.
+Strona ma obecnie następujące funkcje:
+- informacje - kontakt, regulamin, informacje o konkursie itd
+- rejestracja i logowanie - by korzystać z funkcji
+- lista tematów na przemówienia - zalogowani użytkownicy mogą dodawać propozycje tematów, a administratorzy akceptować i wyświetlać wybrane na stronie
+- chatbot
+
+Informacje techniczne: 
+Strona napisana została w całości przez jej autorów używając technologii NodeJS, z bazą danych MongoDB.
+Krótki spis treści folderów:
+- public - wszystkie pliki .html, .css i .js wykonywane po stronie klienta
+- config - pliki konfiguracyjne serwera
+- handlers, routes, middleware, models - wszystkie pliki wykonywane po stronie serwera 
+
+echo "# Zlote-usta" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Zaklinejszyn/Zlote-usta.git
+git push -u origin master
