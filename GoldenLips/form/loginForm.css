@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0 100px 0;
+}
+
+.formBox {
+    width: 460px;
+    height: 490px;
+    padding: 20px 55px;
+    border: 2px solid var(--gold);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.formBoxTitle {
+    font-size: 21px;
+    margin: 0;
+}
+
+.formBoxDescription {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.e-mail, .password {
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid var(--gold);
+    margin: 10px 0;
+    width: 80%;
+    outline: none;
+}
+
+.goRegister a{
+    text-decoration: none;
+    color: white;
+}
+.goRegister a:hover{
+    color: var(--gold);
+}
+
+.formButton {
+    background-color: var(--gold);
+    margin-top: 30px;
+    display: block;
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.createAccountForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 45px;
+}
+
+/* media queries */
+
+@media (max-width: 600px) {
+    .formBox {
+        width: 50%;
+        height: 50%;
+    }
+    .formBoxTitle {
+        font-size: 14px;
+    }
+
+    .formBoxDescription {
+        font-size: 10px;
+    }
+
+    .e-mail, .password {
+        font-size: 11px;
+        margin: 7px 0;
+    }
+
+    .formButton {
+        margin-top: 20px;
+        font-size: 11px;
+        padding: 6px 12px;
+        margin-bottom: 6px;
+    }
+
+    .createAccountForm {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .formBox {
+        width: 95vw;
+        height: 50%;
+    }
+    .formBoxTitle {
+        font-size: 14px;
+    }
+
+    .formBoxDescription {
+        font-size: 10px;
+    }
+
+    .e-mail, .password {
+        font-size: 11px;
+        margin: 7px 0;
+    }
+
+    .formButton {
+        margin-top: 20px;
+        font-size: 11px;
+        padding: 6px 12px;
+        margin-bottom: 6px;
+    }
+
+    .createAccountForm {
+        margin-top: 30px;
+    }
+}
+

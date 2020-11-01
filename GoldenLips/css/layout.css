@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
+
+:root {
+    --gold: #ffbf00;
+    --black: #171717;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Fira Code', monospace;
+    background-color: var(--black);
+    color: white;
+    margin: 0;
+}
+hr {
+    border: 1px solid var(--gold);
+}
+
+.infoMenu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.menuButton {
+    font-size: 12px;
+    font-family: 'Fira Code', monospace;
+    background-color: transparent;
+    padding: 10px 20px;
+    border: 1px solid white;
+    color: var(--gold);
+    cursor: pointer;
+}
+
+.menuItem:not(:last-child) {
+    border-right: none;
+}
+.menuItem {
+    border-right: 1px solid white;
+}
+
+.menuButtonActive {
+    font-size: 12px;
+    font-family: 'Fira Code', monospace;
+    background-color: transparent;
+    padding: 10px 30px;
+    border: 1px solid white;
+    color: var(--black);
+    background-color: white;
+    cursor: pointer;
+}
+
+.info {
+    max-width: 700px;
+    margin: 150px 50px 0px 50px;
+}
+
+.infoTitle {
+    font-size: 48px;
+    color: var(--gold);
+}
+
+.infoDescription {
+    font-size: 21px;
+}
+
+.itemHeader {
+    background-color: white;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.itemTitle {
+    margin: 0;
+    color: var(--black);
+    font-size: 21px;
+}
+
+.itemContent {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.itemDescription p{
+    padding: 10px;
+}
+
+.itemButton {
+    font-size: 12px;
+    font-family: 'Fira Code', monospace;
+    background-color: transparent;
+    padding: 10px 30px;
+    border: 1px solid white;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--gold);
+}
+
+.itemButton a{
+    text-decoration: none;
+    color: var(--gold);
+}
+
+@media (max-width: 450px) {
+    .infoMenu {
+        width: 50px !important;
+    }
+}
